@@ -1,0 +1,31 @@
+.about-page .images{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    .img-container{
+        width: 50%;
+    }
+    .img{
+        width: 100%;
+        min-height: 100%;
+    }
+    .img1{
+        content: url('../../../../assets/About/img1.jpg');
+    }
+    .img2{
+        content: url('../../../../assets/About/img2.jpg');
+    }
+    .img3{
+        content: url('../../../../assets/About/img3.jpg');
+    }
+    .img4{
+        content: url('../../../../assets/About/img4.jpg');
+    }
+    .img5{
+        content: url('../../../../assets/About/img5.jpg');
+    }
+    .img6{
+        content: url('../../../../assets/About/img6.jpg');
+    }
+}

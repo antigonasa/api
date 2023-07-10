@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense, useEffect} from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import './App.scss';
+import Loader from './components/shared/Loader/Loader';
+import Aos from 'aos';
+import "aos/dist/aos.css";
+
+const Home = lazy(() => import('./pages/Home/Home'))
+const About = lazy(() => import('./pages/About/About'))
+const Login = lazy(() => import('./pages/Login/Login'))
 
 function App() {
+
+   useEffect(() => {
+    Aos.init({
+      duration:1250,
+      once: true
+    })
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='*' element={<Navigate to='/' />} />
+        </Routes>
+      </Suspense>
+    </Router>
   );
 }
 

@@ -1,0 +1,22 @@
+.light-dark-mode{
+    background-color: #697897;
+    width: 60px;
+    height: 25px;
+    border-radius: 100vw;
+    cursor: pointer;
+    .mode{
+        width: 25px;
+        height: 25px;
+        background-color:rgb(221, 199, 0);
+        border-radius: 50%;
+        transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
+    }
+}
+
+.dark-mode .light-dark-mode{
+    background-color: #1d325c;
+    .mode{
+        margin-left: auto;
+    }
+}

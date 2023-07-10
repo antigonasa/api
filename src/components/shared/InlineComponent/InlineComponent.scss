@@ -1,0 +1,48 @@
+.shared-inline-component{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin:50px 0;
+    padding:0 10%;
+    .text{
+        width: 45%;
+    }
+    .img{
+        width: 45%;
+    }
+    h1{
+        font-size: 25px;
+    }
+    p{
+        font-size: 15px;
+        margin:10px 0;
+    }
+    a{
+        color:#427cff;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        svg{
+            margin-left: 10px;
+        }
+    }
+}
+
+@media(max-width:1000px){
+    .shared-inline-component{
+        .img{
+            width: 400px;
+            margin:0 auto;
+            max-width: 100%;
+        }
+        .text{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        a{
+            justify-content: center;
+        }
+    }
+}

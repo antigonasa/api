@@ -1,0 +1,150 @@
+nav, .toolbar{
+    width: 100%;
+    top:0;
+    left:0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:15px 5%;
+    transition: 0.25s ease-in-out;
+    -webkit-transition: 0.25s ease-in-out;
+    .mobile-nav{
+        display: none;
+    }
+}
+
+nav .logo{
+    color: #fff;
+    font-size: max(2vw, 30px);
+    font-weight: 700;
+}
+nav .nav-links{
+    display: flex;
+    align-items: center;
+    a{
+       font-size: max(16px, 1.25vw);
+       color:#fff;
+       padding:10px;
+       margin: 5px; 
+    }
+}
+
+@media(max-width:1000px){
+    nav{
+        padding:0 5%;
+        .nav-logo, .nav-links, .nav-button{
+            display: none;
+        }
+        .mobile-nav{
+            display: block;
+        }
+    }
+}
+
+nav{
+    z-index: 2000;
+}
+.toolbar{
+    z-index: 2100;
+    padding:15px;
+}
+.mobile-nav .toolbar button{
+    border:0;
+    font-size: 30px;
+    display: flex;
+    background: none;
+    cursor: pointer;
+    color:#fff;
+}
+
+.mobile-nav .sidebar{
+    z-index: 2500;
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    min-height: 100vh;
+    width: 300px;
+    max-width: 80%;
+    background-color: #fff;
+    animation: sidebarScroll 0.5s ease-in;
+    -webkit-animation: sidebarScroll 0.5s ease-in;
+    .logo-container{
+        display: flex;
+        align-items: center;
+        padding:15px;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+    }
+    button{
+        border:0;
+        font-size: 30px;
+        display: flex;
+        background: none;
+        cursor: pointer;
+        color:#333;
+    }
+    .mobile-links{
+        display: flex;
+        flex-direction: column;
+        a{
+            padding:15px;
+            font-size: 18px;
+            color:#333;
+            font-weight: 600;   
+            border-bottom: 1px solid #ddd;
+        }
+    }
+    .btn-container{
+        margin: 50px 15px;
+    }
+    .sidebar-logo{
+        font-size: max(2vw, 30px);
+        color:#333;
+        font-weight: 700;
+    }
+}
+
+.backdrop{
+    z-index: 2200;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.75);
+}
+
+//nav while scrolling style
+.nav-scroll, .white-bg-nav{
+    background-color: #fff !important;
+    .nav-links a{
+        color:#111 !important;
+    }
+    .logo, button{
+        color: #333 !important;
+    }
+}
+
+.nav-scroll{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
+}
+
+@keyframes sidebarScroll {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes sidebarScroll {
+    0%{
+        -webkit-transform: translateX(-100%);
+    }
+    100%{
+        -webkit-transform: translateX(0);
+    }
+}

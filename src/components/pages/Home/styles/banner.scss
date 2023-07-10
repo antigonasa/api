@@ -1,0 +1,24 @@
+.home-page .banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../../../assets/Home/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  color: #fff;
+  padding: 150px 15% 75px;
+  text-align: center;
+  h1{
+    font-size: 25px;
+  }
+  p{
+    font-size: 17px;
+    margin:10px 0 35px;
+    line-height: 1.6;
+  }
+}
+
+@media(max-width:1000px){
+  .home-page .banner {
+    padding: 150px 5% 75px;
+  }
+}
