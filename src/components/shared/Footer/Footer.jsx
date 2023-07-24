@@ -3,6 +3,7 @@ import './footer.scss'
 import { Link } from 'react-router-dom'
 import { data } from './data'
 import ModeSwitch from './ModeSwitch'
+import ColorSwitch from './ColorSwitch'
 
 const Footer = () => {
   return (
@@ -34,6 +35,10 @@ const Footer = () => {
             <p>Outkos 2022 © All rights reserved.</p>
             
             <ModeSwitch />
+        </div>
+
+        <div className='prefered-theme'>
+            Prefered theme: <ColorSwitch />
         </div>
 
     </footer>

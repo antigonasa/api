@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Carousel from 'react-elastic-carousel'
 
 const UsersWithAxios = () => {
   const [users, setUsers] = useState([]);
@@ -14,12 +15,49 @@ const UsersWithAxios = () => {
       .catch((err) => console.log("Error: ", err));
   }, []);
 
+  const myBreakpoints = [
+    {
+      width: 1,
+      itemsToShow:1
+    },
+    {
+      width: 500,
+      itemsToShow:2
+    },
+    {
+      width: 800,
+      itemsToShow:3
+    },
+  ]
+
+  const carouselRef = useRef(null);
+  const onNextStart = (currentItem, nextItem) => {
+    if(currentItem.index === nextItem.index){
+      carouselRef.current.goTo(0);
+    }
+  }
+
+  const onPrevStart = (currentItem, nextItem) => {
+    if(currentItem.index === nextItem.index){
+      carouselRef.current.goTo('single-slide'.length);
+    }
+  }
+
   return (
     <div className="our-team">
       <h1>Our Team</h1>
-      <div className="items">
-        {users.slice(0,10).map((props) => {
-          return <div className="item" key={props.id}>
+      <Carousel
+        // itemsToShow={3}
+        // enableAutoPlay
+        className='slider'
+        breakPoints={myBreakpoints}
+        ref={carouselRef}
+        onPrevStart={onPrevStart}
+        onNextStart={onNextStart}
+        disableArrowsOnEnd={false} 
+      >
+       {users.slice(0,10).map((props) => {
+          return <div className="item slider-item" key={props.id}>
             <h6>{props.id}. {props.name}</h6>
             <p className="email">{props.email}</p>
             <p className="address">Address:</p>
@@ -31,7 +69,8 @@ const UsersWithAxios = () => {
             </p>
           </div>;
         })}
-      </div>
+      </Carousel>
+    
     </div>
   );
 };

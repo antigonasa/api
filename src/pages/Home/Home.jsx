@@ -7,12 +7,15 @@ import SolutionsTabs from '../../components/pages/Home/SolutionsTabs'
 import Footer from '../../components/shared/Footer/Footer'
 import HomeMainComponent from '../../components/pages/Home/HomeMainComponent'
 import Inline1 from '../../components/pages/Home/Inline1'
+import SvgUse from '../../components/pages/Home/SvgUse'
+
 const Home = () => {
   return (
     <div className='page-container home-page'>
         {/* <Navbar /> */}
         <Navbar2 />
         <Banner />
+        <SvgUse />
         <Inline1 />
         <SolutionsTabs />
         <HomeMainComponent />

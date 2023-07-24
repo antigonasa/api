@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import SharedLink from "../../shared/SharedLink/SharedLink";
 import "./styles/users.scss";
+import { FaHome } from 'react-icons/fa'
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -24,14 +26,18 @@ const Users = () => {
             <p className="email">{props.email}</p>
             <p className="address">Address:</p>
             <p className="city">
-                St. {props.address.street}
+              St. {props.address.street}
             </p>
             <p className="city">
-                City: {props.address.city}
+              City: {props.address.city}
             </p>
           </div>;
         })}
       </div>
+      <br />
+      <SharedLink to='/' link='View More' icon={<FaHome />} reverse />
+      <br />
+      <br />
     </div>
   );
 };

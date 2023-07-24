@@ -19,7 +19,7 @@ body {
 
 .shared-button {
   color: #fff;
-  background-color: #427cff;
+  background-color: var(--main-color);
   padding: 13px 25px;
   border-radius: 5px;
   font-size: 16px;
@@ -30,4 +30,27 @@ body {
 .dark-mode{
   background-color: #101929;
   color:#fff;
+}
+
+// .rec-swipable{
+//   align-items:stretch;
+// }
+// .rec-carousel-item-visible{
+//   display: flex;
+// }
+
+:root{
+  --main-color: #eb8341;
+}
+
+body.theme-red{
+  --main-color: #d53333;
+}
+
+body.theme-blue{
+  --main-color: #427cff;
+}
+
+body.theme-green{
+  --main-color: #429e79;
 }

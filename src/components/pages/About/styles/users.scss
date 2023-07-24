@@ -25,3 +25,40 @@
         margin:10px 0;
     }
 }
+
+.about-page .slider-item{
+    border:1px solid #aaa;
+    padding:20px;
+    width: 90% !important;
+    max-width: 90% !important;
+    margin-top:20px;
+}
+
+.about-page .our-team{
+    .rec-arrow, .rec-arrow-right, .rec-arrow-left{
+        border:2px solid var(--main-color) !important;
+        box-shadow: none !important;
+        background: none !important;
+        color:var(--main-color) !important;
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+        max-width: 40px !important;
+        max-height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .rec-dot{
+        border:2px solid var(--main-color) !important;
+        box-shadow: none !important;
+        background: none !important;
+        width: 14px !important;
+        height: 14px !important;
+    }
+    .rec-dot_active{
+        background-color: var(--main-color) !important;
+    }
+    
+}

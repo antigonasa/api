@@ -1,5 +1,8 @@
 import React from "react";
 import './styles/services.scss'
+import SharedLink from '../../shared/SharedLink/SharedLink'
+import {BsArrowRight} from 'react-icons/bs'
+import SharedLink2 from "../../shared/SharedLink2/SharedLink2";
 
 const Services = () => {
   return (
@@ -22,6 +25,16 @@ const Services = () => {
         nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
         voluptas nulla pariatur?
       </p>
+      {/* <SharedLink 
+        to='/about' 
+        link='Show more' 
+        icon={<BsArrowRight />} 
+      /> */}
+      <SharedLink2 
+        to='/about'
+        text='Show More'
+        icon={<BsArrowRight />}
+      />
     </div>
   );
 };

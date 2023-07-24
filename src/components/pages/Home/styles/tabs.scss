@@ -34,7 +34,7 @@
         outline: none;
         svg{
             font-size: 25px;
-            color:#427cff;
+            color:var(--main-color);
             margin-right: 10px;   
         }
         &:last-child{
@@ -42,7 +42,7 @@
         }
     }
     .react-tabs__tab--selected{
-        background-color: #427cff;
+        background-color: var(--main-color);
         color:#fff;
         svg{
             color:#fff;
