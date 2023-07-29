@@ -7,6 +7,7 @@ import Navbar2 from "../../components/shared/Navbar2/Navbar2";
 import AboutMainComponent from "../../components/pages/About/AboutMainComponent";
 import Footer from '../../components/shared/Footer/Footer';
 import Inline2 from "../../components/pages/About/Inline2";
+import Inputs from "../../components/pages/About/Inputs";
 
 const About = () => {
   return (
@@ -14,6 +15,7 @@ const About = () => {
       {/* <Navbar styles='white-bg-nav' /> */}
       <Navbar2 />
       <Users />
+      <Inputs />
       <AboutMainComponent />
       <UsersWithAxios />
       <Inline2 />

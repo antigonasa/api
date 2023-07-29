@@ -15,48 +15,55 @@ const UsersWithAxios = () => {
       .catch((err) => console.log("Error: ", err));
   }, []);
 
-  const myBreakpoints = [
+
+  const breakpoints2 = [
     {
-      width: 1,
-      itemsToShow:1
+      width:1,
+      itemsToShow:1,
     },
     {
-      width: 500,
-      itemsToShow:2
+      width:500,
+      itemsToShow:2,
     },
     {
-      width: 800,
-      itemsToShow:3
+      width:850,
+      itemsToShow:3,
     },
   ]
 
   const carouselRef = useRef(null);
-  const onNextStart = (currentItem, nextItem) => {
+  const onNextStart2 = (currentItem, nextItem) => {
     if(currentItem.index === nextItem.index){
-      carouselRef.current.goTo(0);
+      carouselRef.current.goTo(0)
     }
   }
-
-  const onPrevStart = (currentItem, nextItem) => {
+  
+  const onPrevStart2 = (currentItem, nextItem) => {
     if(currentItem.index === nextItem.index){
-      carouselRef.current.goTo('single-slide'.length);
+      carouselRef.current.goTo('single-slide'.length)
     }
   }
 
   return (
     <div className="our-team">
       <h1>Our Team</h1>
+
+      <br />
+      <br />
+      <br />
+      
       <Carousel
-        // itemsToShow={3}
-        // enableAutoPlay
-        className='slider'
-        breakPoints={myBreakpoints}
-        ref={carouselRef}
-        onPrevStart={onPrevStart}
-        onNextStart={onNextStart}
-        disableArrowsOnEnd={false} 
+          // enableAutoPlay
+          // autoPlaySpeed={3000}
+          // itemsToShow={3}
+          // itemsToScroll={2}
+          onNextStart={onNextStart2}
+          onPrevStart={onPrevStart2}
+          breakPoints={breakpoints2}
+          disableArrowsOnEnd={false}
+          ref={carouselRef}
       >
-       {users.slice(0,10).map((props) => {
+        {users.map((props) => {
           return <div className="item slider-item" key={props.id}>
             <h6>{props.id}. {props.name}</h6>
             <p className="email">{props.email}</p>
@@ -70,7 +77,9 @@ const UsersWithAxios = () => {
           </div>;
         })}
       </Carousel>
-    
+
+      <br />
+      <br />
     </div>
   );
 };

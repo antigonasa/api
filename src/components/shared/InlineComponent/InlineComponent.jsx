@@ -7,7 +7,7 @@ const InlineComponent = (props) => {
     return (
         <div className='shared-inline-component'>
             <div className='text'>
-                {props.title ? <h1>{props.title}</h1> : null}
+                {props.title ? <h1 data-aos="zoom-in">{props.title}</h1> : null}
                 {props.text ? <p>{props.text}</p> : null}
                 {props.to ? <Link to={props.to}>{props.link} <BsArrowRight /></Link> : null}
             </div>
